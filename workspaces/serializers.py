@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from .models import Profile
+from .models import Workspace
 
 
-class ProfileSerializer(serializers.ModelSerializer):
+class WorkspaceSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
 
@@ -11,9 +11,7 @@ class ProfileSerializer(serializers.ModelSerializer):
         return request.user == obj.owner
 
     class Meta:
-        model = Profile
+        model = Workspace
         fields = [
-            'id', 'owner', 'created_at', 'updated_at',
-            'name', 'content', 'image', 'is_owner',
-            'workspaces'
+            'id', 'title', 'owner', 'updated_at', 'is_owner'
         ]

@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
+from workspaces.models import Workspace
 
 
 class Profile(models.Model):
@@ -12,6 +13,7 @@ class Profile(models.Model):
     image = models.ImageField(
         upload_to='images/', default='../default_profile_gjpvfh'
     )
+    workspaces = models.ManyToManyField(Workspace, blank=True)
 
     class Meta:
         ordering = ['-created_at']

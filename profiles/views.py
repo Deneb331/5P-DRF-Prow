@@ -1,6 +1,8 @@
 from django.http import Http404
+from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework.permissions import IsAdminUser
 from drow_drfapi.permissions import IsOwnerOrReadOnly
 from .models import Profile
 from .serializers import ProfileSerializer
@@ -44,7 +46,7 @@ class ProfileDetail(APIView):
     def put(self, request, pk):
         profile = self.get_object(pk)
         serializer = ProfileSerializer(
-            profile, 
+            profile,
             data=request.data,
             context={'request': request})
         if serializer.is_valid():
