@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from .models import Board
+from .models import List
 
 
-class BoardSerializer(serializers.ModelSerializer):
+class ListSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
 
@@ -11,8 +11,7 @@ class BoardSerializer(serializers.ModelSerializer):
         return request.user == obj.owner
 
     class Meta:
-        model = Board
+        model = List
         fields = [
-            'id', 'title', 'owner', 'workspace', 'created_on',
-            'updated_on', 'is_owner', 'image'
+            'id', 'title', 'owner', 'created_at', 'is_owner'
         ]
