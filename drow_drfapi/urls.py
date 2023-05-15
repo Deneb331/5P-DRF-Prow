@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include('profiles.urls')),
     path('', include('workspaces.urls')),
     path('', include('boards.urls')),
+    path('', include('cards.urls')),
 ]
