@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import Like
 
 
-class ListSerializer(serializers.ModelSerializer):
+class LikeSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
 

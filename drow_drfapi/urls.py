@@ -24,4 +24,5 @@ urlpatterns = [
     path('', include('boards.urls')),
     path('', include('cards.urls')),
     path('', include('lists.urls')),
+    path('', include('likes.urls')),
 ]
