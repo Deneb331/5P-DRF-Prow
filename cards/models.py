@@ -22,6 +22,7 @@ class Card(models.Model):
 
     class Meta:
         ordering = ['id']
+        # unique_together=      **Discover how to use properly
 
     def __str__(self):
         return f'{self.title}'
