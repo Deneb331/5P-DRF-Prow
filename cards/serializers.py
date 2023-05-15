@@ -13,7 +13,7 @@ class CardSerializer(serializers.ModelSerializer):
     class Meta:
         model = Card
         fields = [
-            'id', 'title', 'owner', 'list', 'content', 'member',
+            'id', 'title', 'owner', 'list', 'content', 'members',
             'priority_color', 'created_on', 'updated_on',
             'due_time', 'is_owner', 'file'
         ]
