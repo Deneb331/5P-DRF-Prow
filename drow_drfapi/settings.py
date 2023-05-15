@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'workspaces',
     'boards',
     'cards',
+    'lists',
 ]
 
 MIDDLEWARE = [

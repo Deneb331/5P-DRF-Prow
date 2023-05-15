@@ -13,5 +13,5 @@ class ListSerializer(serializers.ModelSerializer):
     class Meta:
         model = List
         fields = [
-            'id', 'title', 'owner', 'created_at', 'is_owner'
+            'id', 'title', 'owner', 'created_at', 'board', 'is_owner'
         ]
