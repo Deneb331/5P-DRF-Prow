@@ -35,7 +35,7 @@ class BoardList(APIView):
 
 class BoardDetail(APIView):
     """
-    List a single board in detail and allows the user to edit it.
+    List a single board in detail and allows the user to edit or delete it.
     """
     serializer_class = BoardSerializer
     permission_classes = [IsOwnerOrReadOnly]
