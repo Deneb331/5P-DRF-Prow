@@ -35,7 +35,7 @@ class WorkspaceList(APIView):
 
 class WorkspaceDetail(APIView):
     """
-    Detail view of a single workspace and edit form.
+    Detail view of a single workspace, edit form and delete option.
     """
     serializer_class = WorkspaceSerializer
     permission_classes = [IsOwnerOrReadOnly]
