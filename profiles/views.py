@@ -4,16 +4,13 @@ from .models import Profile
 from .serializers import ProfileSerializer
 
 
-class ProfileList(generics.ListCreateAPIView):
+class ProfileList(generics.ListAPIView):
     """
     List all profiles.
     """
     serializer_class = ProfileSerializer
 
     queryset = Profile.objects.all()
-
-    def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
 
 
 class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):

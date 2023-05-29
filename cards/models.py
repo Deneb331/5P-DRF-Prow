@@ -1,11 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
+from lists.models import List
 
 
 class Card(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=255, blank=False)
-    list = models.IntegerField()
+    list = models.ForeignKey(List, on_delete=models.CASCADE)
     content = models.TextField(max_length=1000)
     priority_color = models.IntegerField(blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
