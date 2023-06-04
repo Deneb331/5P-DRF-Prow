@@ -5,6 +5,7 @@ from workspaces.models import Workspace
 
 
 class Profile(models.Model):
+    id = models.AutoField(primary_key=True)
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
