@@ -14,7 +14,7 @@ class ListSerializer(serializers.ModelSerializer):
 
     def get_card_list(self, obj):
         card_list = Card.objects.filter(list=obj)
-        serialized_card_list = [card.title for card in card_list]
+        serialized_card_list = [card.id for card in card_list]
         return serialized_card_list
 
     class Meta:

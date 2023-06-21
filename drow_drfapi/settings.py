@@ -64,7 +64,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
-    '8000-deneb331-5pdrfprow-g1a0jhr3bdf.ws-eu98.gitpod.io',
+    '8000-deneb331-5pdrfprow-g1a0jhr3bdf.ws-eu100.gitpod.io',
     'localhost',
     os.environ.get('ALLOWED_HOST')
 ]
