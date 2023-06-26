@@ -16,10 +16,11 @@ class Card(models.Model):
         User,
         related_name='member_models',
         blank=True)
-    file = models.FileField(
-        upload_to='uploads/',
-        blank=True
-    )
+    file = models.ImageField(
+        upload_to='raw/', 
+        blank=True, 
+        storage=RawMediaCloudinaryStorage())
+        
 
     class Meta:
         ordering = ['id']
@@ -27,3 +28,8 @@ class Card(models.Model):
 
     def __str__(self):
         return f'{self.title}'
+
+    class TestModelWithRawFileAndImage(models.Model):
+    name = models.CharField(max_length=100)
+    raw_file = models.ImageField(upload_to='raw/', blank=True, storage=RawMediaCloudinaryStorage())
+    image = models.ImageField(upload_to='images/', blank=True)
