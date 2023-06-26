@@ -20,6 +20,7 @@ class Card(models.Model):
     file = models.FileField(
         upload_to='uploads/',
         blank=True,
+        null=True,
         storage=RawMediaCloudinaryStorage())
 
     class Meta:
