@@ -13,10 +13,6 @@ class Card(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     due_time = models.DateTimeField(null=True)
-    members = models.ManyToManyField(
-        User,
-        related_name='member_models',
-        blank=True)
     file = models.FileField(
         upload_to='uploads/',
         blank=True,

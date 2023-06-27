@@ -10,7 +10,6 @@ class Profile(models.Model):
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
     name = models.CharField(max_length=255, blank=True)
-    content = models.TextField(blank=True)
     image = models.ImageField(
         upload_to='images/', default='../default_profile_gjpvfh'
     )
