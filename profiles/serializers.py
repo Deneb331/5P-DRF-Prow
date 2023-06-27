@@ -7,7 +7,6 @@ class ProfileSerializer(serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
     boards_count = serializers.ReadOnlyField()
     lists_count = serializers.ReadOnlyField()
-    cards_count = serializers.ReadOnlyField()
 
     def get_is_owner(self, obj):
         request = self.context['request']
